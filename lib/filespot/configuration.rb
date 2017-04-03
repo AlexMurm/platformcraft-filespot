@@ -8,6 +8,7 @@ module Filespot
   #     config.version = 1
   #     config.apikey = '12345'
   #     config.apiuserid = '12345'
+  #     config.timeout = 500
   #   end
   #
   module Configuration
@@ -18,7 +19,7 @@ module Filespot
 
     # options
     OPTIONS = [
-      :url, :version, :apiuserid, :apikey
+      :url, :version, :apiuserid, :apikey, :timeout
     ].freeze
 
     # settings attributes
@@ -33,6 +34,7 @@ module Filespot
     def init
       self.url = API_URL
       self.version = API_VERSION
+      self.timeout = 500
       self.apiuserid = nil
       self.apikey = nil
     end

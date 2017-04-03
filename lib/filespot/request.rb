@@ -43,6 +43,7 @@ module Filespot
       Faraday.new(uri) do |f|
         f.request :multipart
         f.request :url_encoded
+        f.options[:timeout] = Filespot.timeout
         f.adapter :net_http
       end
     end
